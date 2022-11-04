@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  margin: 40px 180px;
+  grid-template-columns: repeat(4, 6fr);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #3a3553;
+  text-align: end;
+  color: #fff;
+  font-size: 50px;
+  padding: 15px;
+}
+
+.double {
+  grid-column: span 2;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 25px;
+  border-color: #fff;
+}
+
+.orange {
+  background-color: rgb(218, 105, 0);
+}
