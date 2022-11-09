@@ -6,30 +6,39 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      output: ""
+    };
+
+    this.addToOutput = this.addToOutput.bind(this);
   }
+
+  addToOutput(event) {
+    let inputString = this.state.output + event.currentTarget.innerText;
+    this.setState({ output: inputString });
+  };
 
   render() {
     return (
       <div className="container">
-        <div className="output">0</div>
-        <button type="button">AC</button>
+        <div className="output">{this.state.output}</div>
+        <button type="button" value="">AC</button>
         <button type="button">+/-</button>
         <button type="button">%</button>
         <button type="button" className="orange">÷</button>
-        <button type="button">7</button>
-        <button type="button">8</button>
-        <button type="button">9</button>
+        <button type="button" onClick={this.addToOutput}>7</button>
+        <button type="button" onClick={this.addToOutput}>8</button>
+        <button type="button" onClick={this.addToOutput}>9</button>
         <button type="button" className="orange">x</button>
-        <button type="button">4</button>
-        <button type="button">5</button>
-        <button type="button">6</button>
+        <button type="button" onClick={this.addToOutput}>4</button>
+        <button type="button" onClick={this.addToOutput}>5</button>
+        <button type="button" onClick={this.addToOutput}>6</button>
         <button type="button" className="orange">-</button>
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
+        <button type="button" onClick={this.addToOutput}>1</button>
+        <button type="button" onClick={this.addToOutput}>2</button>
+        <button type="button" onClick={this.addToOutput}>3</button>
         <button type="button" className="orange">+</button>
-        <button type="button" className="double">0</button>
+        <button type="button" onClick={this.addToOutput} className="double">0</button>
         <button type="button">.</button>
         <button type="button" className="orange">=</button>
       </div>
