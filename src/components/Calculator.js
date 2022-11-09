@@ -1,35 +1,56 @@
 import React, { Component } from 'react';
+import calculate from '../logic/calculate';
 
 class Calculator extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      total: null,
+      next: null,
+    };
+
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
+  handleButtonClick(event) {
+    const button = event.target.textContent;
+    this.setState((previousState) => calculate(previousState, button));
   }
 
   render() {
+    const { total, next } = this.state;
+    let output = 0;
+    if (total === null && next !== null) {
+      output = next;
+    } else if (total !== null && next === null) {
+      output = total;
+    } else {
+      output = next;
+    }
+
     return (
       <div className="container">
-        <div className="output">0</div>
-        <button type="button">AC</button>
-        <button type="button">+/-</button>
-        <button type="button">%</button>
-        <button type="button" className="orange">÷</button>
-        <button type="button">7</button>
-        <button type="button">8</button>
-        <button type="button">9</button>
-        <button type="button" className="orange">x</button>
-        <button type="button">4</button>
-        <button type="button">5</button>
-        <button type="button">6</button>
-        <button type="button" className="orange">-</button>
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <button type="button" className="orange">+</button>
-        <button type="button" className="double">0</button>
-        <button type="button">.</button>
-        <button type="button" className="orange">=</button>
+        <div className="output">{output}</div>
+        <button type="button" onClick={this.handleButtonClick}>AC</button>
+        <button type="button" onClick={this.handleButtonClick}>+/-</button>
+        <button type="button" onClick={this.handleButtonClick}>%</button>
+        <button type="button" onClick={this.handleButtonClick} className="orange">÷</button>
+        <button type="button" onClick={this.handleButtonClick}>7</button>
+        <button type="button" onClick={this.handleButtonClick}>8</button>
+        <button type="button" onClick={this.handleButtonClick}>9</button>
+        <button type="button" onClick={this.handleButtonClick} className="orange">x</button>
+        <button type="button" onClick={this.handleButtonClick}>4</button>
+        <button type="button" onClick={this.handleButtonClick}>5</button>
+        <button type="button" onClick={this.handleButtonClick}>6</button>
+        <button type="button" onClick={this.handleButtonClick} className="orange">-</button>
+        <button type="button" onClick={this.handleButtonClick}>1</button>
+        <button type="button" onClick={this.handleButtonClick}>2</button>
+        <button type="button" onClick={this.handleButtonClick}>3</button>
+        <button type="button" onClick={this.handleButtonClick} className="orange">+</button>
+        <button type="button" onClick={this.handleButtonClick} className="double">0</button>
+        <button type="button" onClick={this.handleButtonClick}>.</button>
+        <button type="button" onClick={this.handleButtonClick} className="orange">=</button>
       </div>
     );
   }
