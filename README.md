@@ -9,9 +9,27 @@
 - Git & GitHub
 
 
-# Getting Started with Create React App
+## Get Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To get the content of this project locally you need to run the following commands in your terminal.
+
+### Prerequisites
+- IDE(code editor) like: **Vscode**, **Sublime**, etc. 
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+
+### Setup
+1. Download the **Zip** file or clone the repo with:
+```bash
+git clone https://github.com/Samuellekpor/leaderboard.git
+```
+2. To access cloned directory run:
+```bash
+cd leaderboard
+```
+3. Open it with the live server by running:
+```bash 
+npm run start
+```
 
 ## Available Scripts
 
@@ -79,6 +97,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Install
+> To install linters and other project's dependencies run:
+```bash
+npm install
+```
+## Run Test for Linters
+
+For tracking linter errors locally you need to follow these steps:
+
+1. For tracking linter errors in HTML files run:
+```bash 
+npx hint .
+```
+
+2. For tracking linter errors in CSS or SASS files run:
+
+```bash
+npx stylelint "\*_/_.{css,scss}"
+```
+
+3. For tracking linter errors in JavaScript files run:
+
+```bash
+npx eslint .
+```
 
 
 ## Authors
