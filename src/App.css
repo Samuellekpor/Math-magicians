@@ -5,7 +5,8 @@
 
 .container {
   display: grid;
-  margin: 40px 250px;
+  margin: 40px 25px;
+  width: 50%;
   grid-template-columns: repeat(4, 6fr);
   grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
 }
@@ -32,4 +33,58 @@ button {
 
 .orange {
   background-color: #da6900;
+}
+
+.App {
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 35px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 50px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 40px;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-size: 25px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #000;
+}
+
+.link a:hover {
+  color: #da6900;
+  text-decoration: underline;
+}
+
+.activeLink {
+  color: #da6900;
+  text-decoration: underline;
+}
+
+.text {
+  padding: 20px 80px;
+}
+
+.quote {
+  text-align: center;
+  margin: 15% 150px;
+  font-size: 25px;
 }
