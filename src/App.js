@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h3 className="title">Let&apos;s do some math!</h3>
         <Calculator />
       </div>
     );
