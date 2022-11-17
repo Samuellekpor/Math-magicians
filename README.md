@@ -8,6 +8,9 @@
 - React.js
 - Git & GitHub
 
+## Live Demo
+
+[Live Demo Link](https://merry-dragon-424cfb.netlify.app/)
 
 ## Get Started
 
